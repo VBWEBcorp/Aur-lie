@@ -122,11 +122,11 @@ export function ServicesContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease }}
-            className="relative font-display text-balance text-4xl leading-[1.1] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl"
+            className="font-display text-balance text-4xl leading-[1.1] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-6xl"
           >
             <span
               aria-hidden
-              className="absolute -left-2 -top-8 font-display text-7xl leading-none text-primary/60 sm:text-8xl"
+              className="mb-4 block font-display text-6xl leading-none text-primary/50 sm:text-7xl"
             >
               «
             </span>

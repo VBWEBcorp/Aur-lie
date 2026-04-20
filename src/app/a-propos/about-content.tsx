@@ -104,9 +104,12 @@ export function AboutContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, ease }}
-              className="relative font-display text-balance text-3xl leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+              className="font-display text-balance text-3xl leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
             >
-              <span aria-hidden className="absolute -left-2 -top-8 font-display text-7xl leading-none text-primary/60 sm:text-8xl">
+              <span
+                aria-hidden
+                className="mb-4 block font-display text-6xl leading-none text-primary/50 sm:text-7xl"
+              >
                 «
               </span>
               {quote}
