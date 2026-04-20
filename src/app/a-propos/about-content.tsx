@@ -1,102 +1,154 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Lightbulb, Users } from 'lucide-react'
 
 import { CtaSection } from '@/components/sections/cta-section'
-import { PageHero } from '@/components/sections/page-hero'
-import { SectionTitle } from '@/components/ui/section-title'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useContent } from '@/hooks/use-content'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const defaultIcons = [Heart, Lightbulb, Users]
 
 const defaults = {
   hero: {
-    eyebrow: 'À propos',
-    title: 'Une équipe engagée à vos côtés',
-    description: 'Nous croyons que chaque entreprise mérite une présence en ligne à la hauteur de ses ambitions. Depuis notre création, nous accompagnons artisans, PME et indépendants avec des solutions simples, efficaces et soignées.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80',
+    eyebrow: 'Ma démarche',
+    title: "Ton antidoute dans l'incertitude",
+    description:
+      "On est parfois surpris à quel point de minuscules changements peuvent avoir un impact énorme sur nos vies. Le coaching est un outil puissant et percutant. J'aide mes clients à faire ces changements subtils qui changent tout.",
+    image: 'https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg',
   },
-  values: [
-    { title: 'Proximité', description: 'Un interlocuteur unique, disponible, qui connaît votre projet sur le bout des doigts.' },
-    { title: 'Clarté', description: 'Pas de jargon inutile. Des explications simples, des livrables concrets.' },
-    { title: 'Sur mesure', description: "Chaque projet est différent. Nous adaptons nos solutions à votre réalité, pas l'inverse." },
+  pillars: [
+    { n: '01', word: 'Clarté', line: "Revenir à l'essentiel." },
+    { n: '02', word: 'Liberté', line: 'Your rules, your game.' },
+    { n: '03', word: 'Présence', line: "Sans t'épuiser, ni tout changer." },
   ],
-  gallery: [
-    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80',
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80',
-  ],
+  quote:
+    "Plus on monte haut, plus il devient difficile de trouver des personnes qui nous parlent franchement, avec qui être dans la « vérité ». Je suis cette personne qui te dit ce que tu as le plus besoin d'entendre.",
+  statline:
+    "Je t'accompagne pour mêler réussite et équilibre, et aller vers des horizons qui te paraissaient impossibles à imaginer.",
 }
 
 export function AboutContent() {
   const { data } = useContent('about', defaults)
-  const hero = data.hero ?? defaults.hero
-  const values = data.values ?? defaults.values
-  const gallery = data.gallery ?? defaults.gallery
+  const hero = { ...defaults.hero, ...((data as any).hero ?? {}) }
+  const pillars = (data as any).pillars ?? defaults.pillars
+  const quote = (data as any).quote ?? defaults.quote
+  const statline = (data as any).statline ?? defaults.statline
 
   return (
     <>
-      <PageHero
-        eyebrow={hero.eyebrow}
-        title={hero.title}
-        description={hero.description}
-        image={hero.image}
-        breadcrumb="À propos"
-      />
+      <section className="relative flex min-h-[340px] items-center overflow-hidden sm:min-h-[400px] lg:min-h-[440px]">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1920&q=80"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
 
-      <section className="border-b border-border/60 bg-muted/10">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="Nos valeurs" title="Ce qui nous guide au quotidien" />
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {values.map((v: any, i: number) => {
-              const Icon = defaultIcons[i] ?? Heart
-              return (
-                <motion.div
-                  key={v.title || i}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.45, ease, delay: i * 0.05 }}
-                >
-                  <Card className="h-full rounded-2xl border-border/80 bg-card/70 shadow-[var(--shadow-sm)] ring-1 ring-foreground/5">
-                    <CardHeader>
-                      <span className="flex size-11 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15">
-                        <Icon className="size-5" aria-hidden />
-                      </span>
-                      <CardTitle className="font-display text-base">{v.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm leading-relaxed text-muted-foreground">{v.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              )
-            })}
-          </div>
+        <div className="relative mx-auto w-full max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
+              {hero.eyebrow}
+            </p>
+            <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              {hero.title}
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white/70 sm:text-xl">
+              {hero.description}
+            </p>
+          </motion.div>
         </div>
       </section>
 
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <SectionTitle eyebrow="En images" title="Notre quotidien" />
-          <div className="mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-            {gallery.map((src: string, i: number) => (
+          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+            Mes appuis
+          </p>
+          <div className="mt-14 divide-y divide-border/50">
+            {pillars.map((p: { n: string; word: string; line: string }, i: number) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
+                key={p.word}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.45, ease, delay: i * 0.06 }}
-                className="overflow-hidden rounded-2xl"
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.55, ease, delay: i * 0.08 }}
+                className="group flex items-baseline gap-6 py-8 md:gap-12 lg:py-12"
               >
-                <img src={src} alt="" loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span className="font-display text-sm font-medium tabular-nums text-muted-foreground/70">
+                  {p.n}
+                </span>
+                <div className="flex flex-1 flex-wrap items-baseline gap-x-8 gap-y-2">
+                  <h3 className="font-display text-4xl leading-none tracking-[-0.03em] text-foreground transition-colors group-hover:text-primary sm:text-5xl lg:text-[4rem]">
+                    {p.word}
+                  </h3>
+                  <p className="text-base text-muted-foreground sm:text-lg">{p.line}</p>
+                </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-b border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <div className="grid items-center gap-12 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-16">
+            <motion.blockquote
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, ease }}
+              className="relative font-display text-balance text-3xl leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+            >
+              <span aria-hidden className="absolute -left-2 -top-8 font-display text-7xl leading-none text-primary/60 sm:text-8xl">
+                «
+              </span>
+              {quote}
+            </motion.blockquote>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7, ease, delay: 0.1 }}
+              className="relative mx-auto w-full max-w-sm md:max-w-none"
+            >
+              <div
+                aria-hidden
+                className="absolute -inset-4 rounded-[2rem] bg-linear-to-br from-primary/25 via-transparent to-transparent blur-2xl"
+              />
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border/70 shadow-[var(--shadow-md)]">
+                <img
+                  src={hero.image}
+                  alt="Aurélie Foin"
+                  className="size-full object-cover object-center"
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, ease }}
+            className="font-display text-5xl leading-[1] tracking-[-0.03em] text-foreground sm:text-6xl lg:text-7xl"
+          >
+            <span className="text-primary">+ de 2000h</span> de coaching.
+          </motion.p>
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+            {statline}
+          </p>
         </div>
       </section>
 

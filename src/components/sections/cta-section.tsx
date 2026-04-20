@@ -10,28 +10,29 @@ import { useContent } from '@/hooks/use-content'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Prêt à démarrer ?',
-  title: 'Parlons de votre projet',
-  description: 'Un échange simple et sans engagement pour comprendre vos besoins et vous proposer la meilleure approche.',
-  button: 'Demander un devis gratuit',
+  eyebrow: 'Rencontre',
+  title: 'Prêt·e à viser l\'impossible ?',
+  description:
+    "Vis un coaching de 30 minutes, sans engagement financier. On fait connaissance, et on voit ensemble.",
+  button: 'Prenons rendez-vous',
 }
 
 const col1Images = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=500&fit=crop&q=80',
+  'https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg',
+  'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1520206183501-b80df61043c2?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1495197359483-d092478c170a?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&h=500&fit=crop&q=80',
 ]
 
 const col2Images = [
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=500&fit=crop&q=80',
+  'https://i.ibb.co/BVsH90Dq/Aur-lie.png',
+  'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=400&h=500&fit=crop&q=80',
 ]
 
 function ScrollColumn({ images, direction, speed }: { images: string[]; direction: 'up' | 'down'; speed: number }) {

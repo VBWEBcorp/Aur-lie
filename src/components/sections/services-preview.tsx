@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Globe, Palette, Search, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Compass, Flame, Sparkles, Target } from 'lucide-react'
 import Link from 'next/link'
 
 import { SectionTitle } from '@/components/ui/section-title'
@@ -9,21 +9,20 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useContent } from '@/hooks/use-content'
 
-const iconMap: Record<string, any> = { Globe, Search, Palette, ShieldCheck }
 const defaultServices = [
-  { title: 'Création de site web', desc: 'Sites vitrines modernes, responsive et optimisés pour convertir vos visiteurs en clients.' },
-  { title: 'Référencement SEO', desc: 'Stratégie de contenu et optimisation technique pour apparaître en première page Google.' },
-  { title: 'Identité visuelle', desc: 'Logo, charte graphique et supports cohérents qui reflètent votre image de marque.' },
-  { title: 'Maintenance & support', desc: 'Mises à jour, sécurité et accompagnement continu pour garder votre site performant.' },
+  { title: 'Talentueux·se, ambitieux·se', desc: "Tu excelles dans ton domaine et tu veux aller plus loin. J'adore cet état d'esprit." },
+  { title: "Dans l'action", desc: "Tu adores être dans l'action. Tu préfères décider et avancer." },
+  { title: 'Habitué·e à réussir', desc: "Tu as l'habitude de réussir ce que tu entreprends." },
+  { title: 'Exigeant·e sur la qualité', desc: "Tu veux offrir un haut niveau de qualité à tes clients." },
 ]
 
-const defaultIcons = [Globe, Search, Palette, ShieldCheck]
+const defaultIcons = [Sparkles, Flame, Target, Compass]
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 export function ServicesPreview() {
   const { data } = useContent('services', {
-    hero: { eyebrow: 'Nos services' },
+    hero: { eyebrow: 'Pour toi' },
     services: defaultServices,
   })
 
@@ -33,13 +32,13 @@ export function ServicesPreview() {
     <section className="border-b border-border/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <SectionTitle
-          eyebrow="Nos services"
-          title="Des solutions adaptées à votre activité"
-          description="Quel que soit votre secteur, nous vous aidons à développer votre présence et à atteindre vos objectifs."
+          eyebrow="Pour toi"
+          title="Si tu te reconnais, on va s'entendre"
+          description="Les points communs entre mes clients ? Les voici."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {services.map((s: any, i: number) => {
-            const Icon = defaultIcons[i] ?? Globe
+            const Icon = defaultIcons[i] ?? Sparkles
             return (
               <motion.div
                 key={s.title || i}
@@ -63,8 +62,8 @@ export function ServicesPreview() {
         </div>
         <div className="mt-10 text-center">
           <Button variant="outline" className="group" asChild>
-            <Link href="/services">
-              Voir tous nos services
+            <Link href="/a-propos">
+              Ma démarche
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </Button>

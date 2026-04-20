@@ -10,11 +10,13 @@ import { useContent } from '@/hooks/use-content'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Notre histoire',
-  title: 'Une approche humaine, des résultats concrets',
-  paragraph1: 'Depuis nos débuts, nous croyons qu\'un bon site commence par une bonne écoute. Nous prenons le temps de comprendre votre métier, vos clients et vos objectifs avant de concevoir quoi que ce soit.',
-  paragraph2: 'Le résultat : des projets qui vous ressemblent, qui parlent à votre audience, et qui travaillent pour vous 24h/24.',
-  image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+  eyebrow: 'Ma démarche',
+  title: "Ton antidoute dans l'incertitude",
+  paragraph1:
+    "On est parfois surpris à quel point de minuscules changements peuvent avoir un impact énorme sur nos vies. Le coaching est un outil puissant et percutant. J'aide mes clients à faire ces changements subtils qui changent tout.",
+  paragraph2:
+    "Plus on monte haut, plus il devient difficile de trouver des personnes qui nous parlent franchement, avec qui être dans la « vérité ». Je suis cette personne qui te dit ce que tu as le plus besoin d'entendre.",
+  image: 'https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg',
 }
 
 export function StorySection() {
@@ -24,23 +26,23 @@ export function StorySection() {
   return (
     <section className="border-b border-border/60 bg-muted/10">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:gap-14 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.55, ease }}
-            className="relative"
+            className="relative mx-auto w-full max-w-sm md:max-w-none"
           >
-            <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-linear-to-br from-primary/10 via-transparent to-transparent blur-2xl" />
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/80 bg-muted/40 shadow-[var(--shadow-md)] ring-1 ring-foreground/5">
+            <div aria-hidden className="absolute -inset-4 rounded-[2rem] bg-linear-to-br from-primary/15 via-transparent to-transparent blur-2xl" />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border/80 bg-muted/40 shadow-[var(--shadow-md)] ring-1 ring-foreground/5">
               <img
                 src={story.image}
-                alt="Équipe au travail"
-                className="size-full object-cover"
+                alt="Aurélie Foin, coach de dirigeant·e·s"
+                className="size-full object-cover object-center"
                 loading="lazy"
                 width={800}
-                height={600}
+                height={1067}
               />
             </div>
           </motion.div>
@@ -66,7 +68,7 @@ export function StorySection() {
             </p>
             <Button variant="outline" className="group" asChild>
               <Link href="/a-propos">
-                Lire plus
+                En savoir plus
                 <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </Link>
             </Button>

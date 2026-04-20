@@ -8,17 +8,17 @@ import { Button } from '@/components/ui/button'
 import { useContent } from '@/hooks/use-content'
 
 const defaultImages = [
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=720&q=80',
 ]
 
 const defaults = {
   eyebrow: 'Galerie',
-  title: 'En coulisses',
+  title: 'Quelques instants',
   images: defaultImages,
 }
 

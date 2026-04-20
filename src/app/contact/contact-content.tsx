@@ -15,10 +15,11 @@ const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
   hero: {
-    eyebrow: 'Contact',
-    title: 'Parlons de votre projet',
-    description: 'Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous répondons sous 24h.',
-    image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
+    eyebrow: 'Rencontre',
+    title: "Prêt·e à viser l'impossible ?",
+    description:
+      "Vis un coaching de 30 minutes, sans engagement financier. Dis-moi où tu en es, je te réponds vite.",
+    image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1920&q=80',
   },
   info: {
     phone: siteConfig.phone,
@@ -127,22 +128,27 @@ export function ContactContent() {
                       <a href={`mailto:${email}`} className="text-sm text-muted-foreground hover:text-foreground">{email}</a>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
-                      <MapPin className="size-4" aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-foreground">Adresse</p>
-                      <p className="text-sm text-muted-foreground">{street}<br />{postalCode} {city}</p>
+                  {city ? (
+                    <div className="flex items-start gap-4">
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
+                        <MapPin className="size-4" aria-hidden />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">Adresse</p>
+                        <p className="text-sm text-muted-foreground">{street}<br />{postalCode} {city}</p>
+                      </div>
                     </div>
-                  </div>
+                  ) : null}
                 </CardContent>
               </Card>
 
               <div className="overflow-hidden rounded-2xl border border-border/80 bg-muted/30 shadow-[var(--shadow-sm)] ring-1 ring-foreground/5">
-                <div className="flex h-56 items-center justify-center text-sm text-muted-foreground">
-                  <p>Intégrez ici votre carte Google Maps<br /><span className="text-xs">(iframe ou API)</span></p>
-                </div>
+                <img
+                  src="https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg"
+                  alt="Aurélie Foin"
+                  className="h-56 w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </motion.div>
           </div>

@@ -5,8 +5,10 @@ import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
   { label: 'Accueil', to: '/' },
-  { label: 'À propos', to: '/a-propos' },
-  { label: 'Services', to: '/services' },
+  { label: 'Ma démarche', to: '/a-propos' },
+  { label: 'Coaching', to: '/services' },
+  { label: 'Galerie', to: '/gallery' },
+  { label: 'Journal', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -64,15 +66,18 @@ export function Footer() {
                 </span>
                 {siteConfig.email}
               </a>
-              <div className="flex items-center gap-3 text-sm text-zinc-400">
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/5 text-primary">
-                  <MapPin className="size-3.5" />
-                </span>
-                <span>
-                  {siteConfig.address.street}, {siteConfig.address.postalCode}{' '}
-                  {siteConfig.address.city}
-                </span>
-              </div>
+              {siteConfig.address.city ? (
+                <div className="flex items-center gap-3 text-sm text-zinc-400">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/5 text-primary">
+                    <MapPin className="size-3.5" />
+                  </span>
+                  <span>
+                    {siteConfig.address.street}
+                    {siteConfig.address.street ? ', ' : ''}
+                    {siteConfig.address.postalCode} {siteConfig.address.city}
+                  </span>
+                </div>
+              ) : null}
             </div>
           </div>
 

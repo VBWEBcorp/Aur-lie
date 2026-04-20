@@ -4,10 +4,10 @@ import { AboutContent } from './about-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Découvrez notre histoire, nos valeurs et notre équipe. Nous accompagnons les entreprises dans leur développement digital.'
+  "Aurélie Foin, coach de dirigeant·e·s. Ton antidoute dans l'incertitude. Mêler réussite et équilibre, sans t'épuiser ni tout changer."
 
 export const metadata: Metadata = {
-  title: 'À propos',
+  title: 'Ma démarche',
   description,
   alternates: { canonical: '/a-propos' },
 }
@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    webPageJsonLd('À propos', description, '/a-propos'),
+    webPageJsonLd('Ma démarche', description, '/a-propos'),
     breadcrumbJsonLd([
       { name: 'Accueil', path: '/' },
-      { name: 'À propos', path: '/a-propos' },
+      { name: 'Ma démarche', path: '/a-propos' },
     ]),
   ],
 }

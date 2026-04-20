@@ -4,7 +4,7 @@ import { ContactContent } from './contact-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Contactez-nous pour discuter de votre projet. Devis gratuit, réponse rapide.'
+  "Prêt·e à viser l'impossible ? Vis un coaching de 30 minutes, sans engagement financier. Écris-moi ou appelle directement."
 
 export const metadata: Metadata = {
   title: 'Contact',

@@ -5,7 +5,6 @@ import { GalleryCarousel } from '@/components/sections/gallery-carousel'
 import { HeroSection } from '@/components/sections/hero-section'
 import { ServicesPreview } from '@/components/sections/services-preview'
 import { StorySection } from '@/components/sections/story-section'
-import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { ValuesMarquee } from '@/components/sections/values-marquee'
 import {
   localBusinessJsonLd,
@@ -39,7 +38,6 @@ export default function HomePage() {
       <HeroSection />
       <ServicesPreview />
       <StorySection />
-      <TestimonialsSection />
       <GalleryCarousel />
       <CtaSection />
       <ValuesMarquee />
