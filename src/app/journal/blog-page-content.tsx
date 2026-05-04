@@ -161,7 +161,7 @@ export default function BlogPageContent() {
             transition={{ duration: 0.5, ease }}
             className="mb-12"
           >
-            <Link href={`/blog/${filteredPosts[0].slug}`} className="group block">
+            <Link href={`/journal/${filteredPosts[0].slug}`} className="group block">
               <div className="grid md:grid-cols-2 gap-6 rounded-2xl border border-border/50 bg-card overflow-hidden hover:shadow-lg hover:border-primary/20 transition-all">
                 <div className="aspect-[16/10] md:aspect-auto overflow-hidden bg-muted">
                   <img
@@ -220,7 +220,7 @@ export default function BlogPageContent() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease, delay: i * 0.06 }}
               >
-                <Link href={`/blog/${post.slug}`} className="group block h-full">
+                <Link href={`/journal/${post.slug}`} className="group block h-full">
                   <div className="h-full rounded-2xl border border-border/50 bg-card overflow-hidden transition-all hover:shadow-lg hover:border-primary/20">
                     {post.coverImage && (
                       <div className="aspect-[16/9] overflow-hidden bg-muted">

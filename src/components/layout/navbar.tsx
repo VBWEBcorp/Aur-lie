@@ -17,11 +17,10 @@ interface NavLink {
 }
 
 const links: NavLink[] = [
-  { to: '/', label: 'Accueil' },
-  { to: '/a-propos', label: 'Ma démarche' },
-  { to: '/services', label: 'Coaching' },
-  { to: '/gallery', label: 'Galerie' },
-  { to: '/blog', label: 'Journal' },
+  { to: '/coaching', label: 'Coaching' },
+  { to: '/methode', label: 'Méthode' },
+  { to: '/journal', label: 'Journal' },
+  { to: '/a-propos', label: 'À propos' },
   { to: '/contact', label: 'Contact' },
 ]
 

@@ -62,8 +62,8 @@ export function ServicesPreview() {
         </div>
         <div className="mt-10 text-center">
           <Button variant="outline" className="group" asChild>
-            <Link href="/a-propos">
-              Ma démarche
+            <Link href="/coaching">
+              Découvrir le coaching
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </Button>

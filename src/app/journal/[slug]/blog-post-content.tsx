@@ -69,7 +69,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <p className="text-muted-foreground text-lg">Article introuvable.</p>
-        <Link href="/blog" className="text-primary underline underline-offset-4 hover:text-primary/80 text-sm">
+        <Link href="/journal" className="text-primary underline underline-offset-4 hover:text-primary/80 text-sm">
           Retour au blog
         </Link>
       </div>
@@ -107,7 +107,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
         >
           {/* Back link */}
           <Link
-            href="/blog"
+            href="/journal"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
           >
             <ArrowLeft className="size-3.5" />
@@ -178,7 +178,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
             </p>
             <div className="flex items-center justify-center gap-3 pt-2">
               <Link
-                href="/blog"
+                href="/journal"
                 className="rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
               >
                 Tous les articles

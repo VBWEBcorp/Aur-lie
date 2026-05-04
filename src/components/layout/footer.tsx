@@ -5,10 +5,14 @@ import { siteConfig } from '@/lib/seo'
 
 const navLinks = [
   { label: 'Accueil', to: '/' },
-  { label: 'Ma démarche', to: '/a-propos' },
-  { label: 'Coaching', to: '/services' },
-  { label: 'Galerie', to: '/gallery' },
-  { label: 'Journal', to: '/blog' },
+  { label: 'Coaching', to: '/coaching' },
+  { label: 'Coaching individuel', to: '/coaching-individuel' },
+  { label: 'Conférences', to: '/conferences' },
+  { label: 'Cercles de dirigeants', to: '/cercles-de-dirigeants' },
+  { label: 'Méthode', to: '/methode' },
+  { label: 'Journal', to: '/journal' },
+  { label: 'À propos', to: '/a-propos' },
+  { label: 'Témoignages', to: '/temoignages' },
   { label: 'Contact', to: '/contact' },
 ]
 

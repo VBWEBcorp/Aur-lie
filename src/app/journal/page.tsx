@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       title,
       description,
-      url: `${siteConfig.url}/blog`,
+      url: `${siteConfig.url}/journal`,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       images: blogSettings.heroImage ? [{ url: blogSettings.heroImage }] : [],
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: blogSettings.heroImage ? [blogSettings.heroImage] : [],
     },
     alternates: {
-      canonical: '/blog',
+      canonical: '/journal',
     },
   }
 }
@@ -43,7 +43,7 @@ export default function BlogPage() {
     '@type': 'CollectionPage',
     name: blogSettings.title,
     description: blogSettings.description,
-    url: `${siteConfig.url}/blog`,
+    url: `${siteConfig.url}/journal`,
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
@@ -54,7 +54,7 @@ export default function BlogPage() {
       itemListElement: posts.map((post, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `${siteConfig.url}/blog/${post.slug}`,
+        url: `${siteConfig.url}/journal/${post.slug}`,
         name: post.title,
       })),
     },

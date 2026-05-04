@@ -41,7 +41,7 @@ export const blogPosts: BlogPostData[] = [
     title: "De dirigeant·e en expansion à humain·e qui respire",
     slug: 'de-dirigeante-en-expansion-a-humaine-qui-respire',
     excerpt:
-      "Clarté. Liberté. Présence. Trois appuis pour mêler réussite et équilibre — sans t'épuiser, ni tout changer.",
+      "Clarté. Liberté. Présence. Trois appuis pour mêler réussite et équilibre, sans t'épuiser, ni tout changer.",
     content: `<p>Tu es dirigeant·e. Tu es en expansion. Et quelque part, tu aimerais aussi être un·e humain·e qui respire.</p>
 <p>Ce que j'observe, à force d'accompagner des dirigeant·e·s : on est parfois surpris à quel point de minuscules changements peuvent avoir un impact énorme sur nos vies. Le coaching est un outil puissant et percutant. J'aide mes clients à faire ces changements subtils qui changent tout.</p>
 <p>Clarté sur ce qui compte vraiment. Liberté de choisir ta direction. Présence à toi, à tes équipes, à ta vie. Your rules, your game.</p>
@@ -122,7 +122,7 @@ export const blogPosts: BlogPostData[] = [
     updatedAt: '2026-03-25T08:00:00.000Z',
     metaTitle: 'Talentueux·se, ambitieux·se, fatigué·e ? | Aurélie Foin',
     metaDescription:
-      "Garder l'ambition, retrouver le souffle. Un coaching pour les dirigeant·e·s qui réussissent — et s'épuisent.",
+      "Garder l'ambition, retrouver le souffle. Un coaching pour les dirigeant·e·s qui réussissent, et s'épuisent.",
   },
 ]
 

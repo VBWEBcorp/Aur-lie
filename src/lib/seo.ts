@@ -34,10 +34,14 @@ export function buildTitle(page?: string) {
 
 export const routes = [
   '/',
+  '/coaching',
+  '/coaching-individuel',
+  '/conferences',
+  '/cercles-de-dirigeants',
+  '/methode',
   '/a-propos',
-  '/services',
-  '/gallery',
-  '/blog',
+  '/journal',
+  '/temoignages',
   '/contact',
   '/mentions-legales',
   '/politique-de-confidentialite',

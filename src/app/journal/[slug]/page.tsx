@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   const title = post.metaTitle || post.title
   const description = (post.metaDescription || post.excerpt || '').substring(0, 160)
-  const url = `${siteConfig.url}/blog/${post.slug}`
+  const url = `${siteConfig.url}/journal/${post.slug}`
 
   return {
     title,
@@ -52,7 +52,7 @@ export async function generateMetadata({
       images: post.coverImage ? [post.coverImage] : [],
     },
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: `/journal/${post.slug}`,
     },
   }
 }
@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${siteConfig.url}/blog/${post.slug}`,
+      '@id': `${siteConfig.url}/journal/${post.slug}`,
     },
     keywords: post.tags?.join(', '),
   }
