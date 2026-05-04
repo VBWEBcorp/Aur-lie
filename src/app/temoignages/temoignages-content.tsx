@@ -6,11 +6,47 @@ import { CtaSection } from '@/components/sections/cta-section'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const references = [
-  'Norauto',
-  'Nordnet',
-  'Communauté de Communes Pévèle Carembault',
-  'Little Big Women',
+type Reference = {
+  n: string
+  name: string
+  kind: string
+  year: string
+  detail: string
+}
+
+const references: Reference[] = [
+  {
+    n: '01',
+    name: 'Norauto',
+    kind: 'Formation',
+    year: '2024',
+    detail:
+      "Cycle de formation au leadership et à la conduite du changement pour une douzaine de managers, sur trois jours répartis dans l'année.",
+  },
+  {
+    n: '02',
+    name: 'Nordnet',
+    kind: 'Conférence',
+    year: '2023',
+    detail:
+      "Conférence « Devenir invincible face à l'incertitude » donnée en plénière, devant une centaine de collaborateurs réunis pour le séminaire annuel.",
+  },
+  {
+    n: '03',
+    name: 'Communauté de Communes Pévèle Carembault',
+    kind: 'Atelier',
+    year: '2024',
+    detail:
+      "Atelier de codéveloppement sur la prise de décision en contexte tendu, pour le comité de direction et l'encadrement intermédiaire.",
+  },
+  {
+    n: '04',
+    name: 'Little Big Women',
+    kind: 'Conférence',
+    year: '2023',
+    detail:
+      "Intervention d'ouverture sur le leadership et la connaissance de soi, à l'occasion d'une rencontre annuelle dédiée aux femmes dirigeantes.",
+  },
 ]
 
 export function TemoignagesContent() {
@@ -46,24 +82,45 @@ export function TemoignagesContent() {
 
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Quelques références
-          </p>
-          <div className="mt-10 flex flex-wrap items-baseline gap-x-4 gap-y-4 font-display text-3xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+          <div className="max-w-2xl">
+            <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+              Quelques références
+            </p>
+            <h2 className="mt-6 font-display text-balance text-3xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+              Des équipes que j&apos;ai eu la chance d&apos;accompagner.
+            </h2>
+          </div>
+
+          <div className="mt-14 divide-y divide-border/60">
             {references.map((r, i) => (
-              <motion.span
-                key={r}
-                initial={{ opacity: 0, y: 14 }}
+              <motion.article
+                key={r.name}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5, ease, delay: i * 0.06 }}
-                className="inline-flex items-baseline gap-4"
+                transition={{ duration: 0.55, ease, delay: i * 0.06 }}
+                className="grid gap-4 py-8 first:pt-0 last:pb-0 md:grid-cols-[auto_1fr_auto] md:items-baseline md:gap-10 md:py-10"
               >
-                <span>{r}</span>
-                {i < references.length - 1 ? (
-                  <span aria-hidden className="text-primary/60">·</span>
-                ) : null}
-              </motion.span>
+                <div className="flex items-baseline gap-4 md:gap-6">
+                  <span className="font-display text-sm font-medium tabular-nums text-muted-foreground/70">
+                    {r.n}
+                  </span>
+                  <h3 className="font-display text-2xl leading-[1.1] tracking-[-0.02em] text-foreground sm:text-3xl lg:text-4xl">
+                    {r.name}
+                  </h3>
+                </div>
+
+                <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  {r.detail}
+                </p>
+
+                <div className="flex shrink-0 items-center gap-3 text-xs font-medium tracking-wide uppercase md:flex-col md:items-end md:gap-1.5">
+                  <span className="rounded-full bg-primary/15 px-3 py-1 text-primary">
+                    {r.kind}
+                  </span>
+                  <span className="text-muted-foreground/80">{r.year}</span>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
