@@ -4,7 +4,7 @@ import { CerclesContent } from './cercles-content'
 import { breadcrumbJsonLd, serviceJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  "Cercles de dirigeants : le déclic en groupe de pairs. Échanges authentiques entre dirigeants qui passent au niveau suivant."
+  "Cercles de dirigeants : groupes de pairs animés par Aurélie Foin, coach TPE/PME à Lille. Le déclic en groupe, sans posture."
 
 export const metadata: Metadata = {
   title: 'Cercles de dirigeants',

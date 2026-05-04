@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
 
+import { CoachingSection } from '@/components/sections/coaching-section'
 import { CtaSection } from '@/components/sections/cta-section'
-import { GalleryCarousel } from '@/components/sections/gallery-carousel'
+import { EntreprisesSection } from '@/components/sections/entreprises-section'
 import { HeroSection } from '@/components/sections/hero-section'
-import { ServicesPreview } from '@/components/sections/services-preview'
+import { JournalPreviewSection } from '@/components/sections/journal-preview-section'
+import { LeadMagnetSection } from '@/components/sections/lead-magnet-section'
+import { ReferencesSection } from '@/components/sections/references-section'
+import { StatsSection } from '@/components/sections/stats-section'
 import { StorySection } from '@/components/sections/story-section'
-import { ValuesMarquee } from '@/components/sections/values-marquee'
 import {
   localBusinessJsonLd,
   organizationJsonLd,
@@ -36,11 +39,14 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroSection />
-      <ServicesPreview />
       <StorySection />
-      <GalleryCarousel />
+      <StatsSection />
+      <CoachingSection />
+      <EntreprisesSection />
+      <JournalPreviewSection />
+      <ReferencesSection />
+      <LeadMagnetSection />
       <CtaSection />
-      <ValuesMarquee />
     </>
   )
 }

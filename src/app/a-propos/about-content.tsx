@@ -3,36 +3,32 @@
 import { motion } from 'framer-motion'
 
 import { CtaSection } from '@/components/sections/cta-section'
-import { useContent } from '@/hooks/use-content'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const defaults = {
-  hero: {
-    eyebrow: 'Ma démarche',
-    title: "Ton antidoute dans l'incertitude",
-    description:
-      "On est parfois surpris à quel point de minuscules changements peuvent avoir un impact énorme sur nos vies. Le coaching est un outil puissant et percutant. J'aide mes clients à faire ces changements subtils qui changent tout.",
-    image: 'https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg',
-  },
-  pillars: [
-    { n: '01', word: 'Clarté', line: "Revenir à l'essentiel." },
-    { n: '02', word: 'Liberté', line: 'Your rules, your game.' },
-    { n: '03', word: 'Présence', line: "Sans t'épuiser, ni tout changer." },
-  ],
-  quote:
-    "Plus on monte haut, plus il devient difficile de trouver des personnes qui nous parlent franchement, avec qui être dans la « vérité ». Je suis cette personne qui te dit ce que tu as le plus besoin d'entendre.",
-  statline:
-    "Je t'accompagne pour mêler réussite et équilibre, et aller vers des horizons qui te paraissaient impossibles à imaginer.",
-}
+const personnalites = [
+  { n: '01', title: "L'Ambitieux", line: 'Qui veut foncer.' },
+  { n: '02', title: 'Le Bienveillant', line: 'Qui freine par loyauté.' },
+  { n: '03', title: "L'Anxieux", line: 'Qui anticipe le pire.' },
+  { n: '04', title: 'Le Visionnaire', line: 'Qui voit loin mais ne sait pas par où commencer.' },
+]
+
+const leviers = [
+  { n: '01', title: 'Coaching certifié', line: 'Un cadre qui sécurise, qui mène à des décisions claires.' },
+  { n: '02', title: 'Neurosciences', line: 'Pour comprendre ce qui se passe vraiment, pas juste en surface.' },
+  { n: '03', title: 'PNL', line: 'Pour reprogrammer les automatismes qui tournent en boucle.' },
+  { n: '04', title: 'Sous-personnalités', line: "Pour faire travailler ensemble les parties qui se contredisent." },
+]
+
+const valeurs = [
+  'Authenticité',
+  'Lucidité',
+  'Bienveillance sans complaisance',
+  'Humour',
+  'Profondeur',
+]
 
 export function AboutContent() {
-  const { data } = useContent('about', defaults)
-  const hero = { ...defaults.hero, ...((data as any).hero ?? {}) }
-  const pillars = (data as any).pillars ?? defaults.pillars
-  const quote = (data as any).quote ?? defaults.quote
-  const statline = (data as any).statline ?? defaults.statline
-
   return (
     <>
       <section className="relative flex min-h-[340px] items-center overflow-hidden sm:min-h-[400px] lg:min-h-[440px]">
@@ -54,41 +50,109 @@ export function AboutContent() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-              {hero.eyebrow}
+              À propos
             </p>
             <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {hero.title}
+              L&apos;antidoute des dirigeants qui passent au niveau suivant
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white/70 sm:text-xl">
-              {hero.description}
+              Je ne coache pas des objectifs. J&apos;accompagne des personnes.
             </p>
           </motion.div>
         </div>
       </section>
 
       <section className="border-b border-border/60">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
           <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Mes appuis
+            D&apos;où je viens
           </p>
-          <div className="mt-14 divide-y divide-border/50">
-            {pillars.map((p: { n: string; word: string; line: string }, i: number) => (
+          <h2 className="mt-6 max-w-3xl font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            J&apos;ai dirigé sous pression avant d&apos;accompagner ceux qui le font.
+          </h2>
+          <div className="mt-10 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            <p>
+              Je viens du monde de l&apos;IT, où j&apos;ai été ingénieure puis manager d&apos;équipes pendant 8 ans. J&apos;ai vécu de l&apos;intérieur ce que c&apos;est que de diriger sous pression, de douter sans pouvoir le montrer, de performer en se perdant un peu en chemin.
+            </p>
+            <p>
+              C&apos;est cette expérience qui m&apos;a amenée au coaching, pas par reconversion par défaut, mais par conviction que les dirigeants méritent un espace où les vraies questions ont le droit d&apos;exister.
+            </p>
+            <p>
+              Je comprends les enjeux business autant que les mécanismes intérieurs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+            Mon approche
+          </p>
+          <h2 className="mt-6 max-w-3xl font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            Chaque dirigeant a son propre conseil d&apos;administration intérieur.
+          </h2>
+          <div className="mt-10 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            <p>
+              Je travaille avec les sous-personnalités de chaque dirigeant : ces différentes parties de soi qui coexistent et qui, souvent, se contredisent.
+            </p>
+          </div>
+
+          <div className="mt-12 divide-y divide-border/50">
+            {personnalites.map((p, i) => (
               <motion.div
-                key={p.word}
+                key={p.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.55, ease, delay: i * 0.08 }}
-                className="group flex items-baseline gap-6 py-8 md:gap-12 lg:py-12"
+                transition={{ duration: 0.5, ease, delay: i * 0.06 }}
+                className="flex items-baseline gap-6 py-7 md:gap-12 lg:py-9"
               >
                 <span className="font-display text-sm font-medium tabular-nums text-muted-foreground/70">
                   {p.n}
                 </span>
                 <div className="flex flex-1 flex-wrap items-baseline gap-x-8 gap-y-2">
-                  <h3 className="font-display text-4xl leading-none tracking-[-0.03em] text-foreground transition-colors group-hover:text-primary sm:text-5xl lg:text-[4rem]">
-                    {p.word}
+                  <h3 className="font-display text-2xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-3xl lg:text-4xl">
+                    {p.title}
                   </h3>
                   <p className="text-base text-muted-foreground sm:text-lg">{p.line}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="mt-12 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            Mon travail, c&apos;est d&apos;aider ces parties à cesser de se battre pour travailler ensemble. Pour que les décisions deviennent plus claires, plus justes, plus alignées avec qui tu es vraiment.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+            Mes leviers
+          </p>
+          <h2 className="mt-6 max-w-3xl font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            Quatre outils, une seule boussole : ce qui change vraiment.
+          </h2>
+          <div className="mt-12 divide-y divide-border/50">
+            {leviers.map((l, i) => (
+              <motion.div
+                key={l.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, ease, delay: i * 0.06 }}
+                className="flex items-baseline gap-6 py-7 md:gap-12 lg:py-9"
+              >
+                <span className="font-display text-sm font-medium tabular-nums text-muted-foreground/70">
+                  {l.n}
+                </span>
+                <div className="flex flex-1 flex-wrap items-baseline gap-x-8 gap-y-2">
+                  <h3 className="font-display text-2xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-3xl lg:text-4xl">
+                    {l.title}
+                  </h3>
+                  <p className="text-base text-muted-foreground sm:text-lg">{l.line}</p>
                 </div>
               </motion.div>
             ))}
@@ -96,62 +160,28 @@ export function AboutContent() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-b border-border/60 bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <div className="grid items-center gap-12 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-16">
-            <motion.blockquote
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, ease }}
-              className="font-display text-balance text-3xl leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
-            >
-              <span
-                aria-hidden
-                className="mb-4 block font-display text-6xl leading-none text-primary/50 sm:text-7xl"
-              >
-                «
-              </span>
-              {quote}
-            </motion.blockquote>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.7, ease, delay: 0.1 }}
-              className="relative mx-auto w-full max-w-sm md:max-w-none"
-            >
-              <div
-                aria-hidden
-                className="absolute -inset-4 rounded-[2rem] bg-linear-to-br from-primary/25 via-transparent to-transparent blur-2xl"
-              />
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-border/70 shadow-[var(--shadow-md)]">
-                <img
-                  src={hero.image}
-                  alt="Aurélie Foin"
-                  className="size-full object-cover object-center"
-                  loading="lazy"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border/60">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease }}
-            className="font-display text-5xl leading-[1] tracking-[-0.03em] text-foreground sm:text-6xl lg:text-7xl"
-          >
-            <span className="text-primary">+ de 2000h</span> de coaching.
-          </motion.p>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            {statline}
+      <section className="border-b border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+            Mes valeurs
           </p>
+          <div className="mt-10 flex flex-wrap items-baseline gap-x-3 gap-y-4 font-display text-3xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            {valeurs.map((v, i) => (
+              <motion.span
+                key={v}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, ease, delay: i * 0.05 }}
+                className="inline-flex items-baseline gap-3"
+              >
+                <span>{v}</span>
+                {i < valeurs.length - 1 ? (
+                  <span aria-hidden className="text-primary/60">·</span>
+                ) : null}
+              </motion.span>
+            ))}
+          </div>
         </div>
       </section>
 

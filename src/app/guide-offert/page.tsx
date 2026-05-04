@@ -1,36 +1,36 @@
 import type { Metadata } from 'next'
 
-import { MethodeContent } from './methode-content'
+import { GuideContent } from './guide-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  "Ma méthode : coaching certifié, neurosciences appliquées et outils de régulation émotionnelle. Pour des changements qui tiennent dans la durée."
+  "Le guide offert d'Aurélie Foin pour les dirigeants qui passent au niveau suivant. Reçois-le directement dans ta boîte mail."
 
 export const metadata: Metadata = {
-  title: 'Méthode',
+  title: 'Guide offert',
   description,
-  alternates: { canonical: '/methode' },
+  alternates: { canonical: '/guide-offert' },
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    webPageJsonLd('Méthode', description, '/methode'),
+    webPageJsonLd('Guide offert', description, '/guide-offert'),
     breadcrumbJsonLd([
       { name: 'Accueil', path: '/' },
-      { name: 'Méthode', path: '/methode' },
+      { name: 'Guide offert', path: '/guide-offert' },
     ]),
   ],
 }
 
-export default function MethodePage() {
+export default function GuidePage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <MethodeContent />
+      <GuideContent />
     </>
   )
 }

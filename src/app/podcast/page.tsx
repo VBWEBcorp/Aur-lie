@@ -1,36 +1,36 @@
 import type { Metadata } from 'next'
 
-import { CoachingContent } from './coaching-content'
+import { PodcastContent } from './podcast-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  "Coaching de dirigeant : programme individuel sur 6 mois, ou cercle de dirigeants en groupe de pairs."
+  "Le podcast et les interventions vidéo d'Aurélie Foin. Coaching, leadership, prise de parole, neurosciences."
 
 export const metadata: Metadata = {
-  title: 'Coaching de dirigeant',
+  title: 'Podcast',
   description,
-  alternates: { canonical: '/coaching' },
+  alternates: { canonical: '/podcast' },
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    webPageJsonLd('Coaching de dirigeant', description, '/coaching'),
+    webPageJsonLd('Podcast', description, '/podcast'),
     breadcrumbJsonLd([
       { name: 'Accueil', path: '/' },
-      { name: 'Coaching de dirigeant', path: '/coaching' },
+      { name: 'Podcast', path: '/podcast' },
     ]),
   ],
 }
 
-export default function CoachingPage() {
+export default function PodcastPage() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <CoachingContent />
+      <PodcastContent />
     </>
   )
 }

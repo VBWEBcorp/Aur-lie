@@ -6,24 +6,20 @@ import { CtaSection } from '@/components/sections/cta-section'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const themes = [
-  'Leadership',
-  'Prise de décision',
-  'Connaissance de soi',
-]
-
-const examples = [
+const episodes = [
   {
+    n: '01',
     title: "Le pire ennemi de ta prise de parole en public",
     youtubeId: 'r5KPTVkM5CE',
   },
   {
+    n: '02',
     title: 'Devenir invincible face à l’incertitude',
     youtubeId: 'bbUTe89EOQ8',
   },
 ]
 
-export function ConferencesContent() {
+export function PodcastContent() {
   return (
     <>
       <section className="relative flex min-h-[340px] items-center overflow-hidden sm:min-h-[400px] lg:min-h-[440px]">
@@ -45,13 +41,13 @@ export function ConferencesContent() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-              Conférences
+              Podcast
             </p>
             <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Pour les dirigeants et leurs équipes
+              Conversations et interventions
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white/70 sm:text-xl">
-              Des conférences sur le leadership, la prise de décision et la connaissance de soi.
+              Des prises de parole, des entretiens, des éclairages pour les dirigeants qui veulent voir clair.
             </p>
           </motion.div>
         </div>
@@ -59,39 +55,8 @@ export function ConferencesContent() {
 
       <section className="border-b border-border/60">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Mes thèmes
-          </p>
-          <div className="mt-10 flex flex-wrap items-baseline gap-x-4 gap-y-3 font-display text-3xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
-            {themes.map((t, i) => (
-              <motion.span
-                key={t}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.5, ease, delay: i * 0.06 }}
-                className="inline-flex items-baseline gap-4"
-              >
-                <span>{t}</span>
-                {i < themes.length - 1 ? (
-                  <span aria-hidden className="text-primary/60">·</span>
-                ) : null}
-              </motion.span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border/60 bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
-            Exemples d&apos;interventions
-          </p>
-          <h2 className="mt-6 max-w-3xl font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
-            Deux conférences à regarder.
-          </h2>
-          <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-10 lg:gap-14">
-            {examples.map((e, i) => (
+          <div className="grid gap-12 md:grid-cols-2 md:gap-10 lg:gap-14">
+            {episodes.map((e, i) => (
               <motion.article
                 key={e.youtubeId}
                 initial={{ opacity: 0, y: 20 }}
@@ -110,9 +75,14 @@ export function ConferencesContent() {
                     className="h-full w-full"
                   />
                 </div>
-                <h3 className="font-display text-xl leading-tight tracking-[-0.02em] text-foreground sm:text-2xl">
-                  {e.title}
-                </h3>
+                <div className="flex items-baseline gap-4">
+                  <span className="font-display text-sm font-medium tabular-nums text-muted-foreground/70">
+                    {e.n}
+                  </span>
+                  <h2 className="font-display text-2xl leading-tight tracking-[-0.02em] text-foreground sm:text-3xl">
+                    {e.title}
+                  </h2>
+                </div>
               </motion.article>
             ))}
           </div>

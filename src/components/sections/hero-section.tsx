@@ -13,9 +13,9 @@ const ease = [0.22, 1, 0.36, 1] as const
 const INTERVAL = 5000
 
 const defaults = {
-  title: "Ton antidoute dans l'incertitude",
+  title: "L'antidoute des dirigeants qui passent au niveau suivant",
   description:
-    "On est parfois surpris à quel point de minuscules changements peuvent avoir un impact énorme sur nos vies. Le coaching est un outil puissant et percutant. J'aide mes clients à faire ces changements subtils qui changent tout.",
+    "Je ne coache pas des objectifs. J'accompagne des personnes, pour qu'elles aillent chercher leurs ambitions sans devenir quelqu'un qu'elles ne veulent pas être.",
   button: 'Me rencontrer',
   avatar: 'https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg',
   images: [
@@ -67,15 +67,15 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease, delay: 0.1 }}
-            className="mx-auto mb-8 size-24 overflow-hidden rounded-full border-[3px] border-white/90 shadow-[0_12px_32px_rgba(0,0,0,0.35)] ring-2 ring-primary/30 sm:size-28"
+            className="mx-auto mb-10 size-40 overflow-hidden rounded-full border-[4px] border-white/90 shadow-[0_18px_48px_rgba(0,0,0,0.45)] ring-2 ring-primary/40 sm:size-48 lg:size-56"
           >
             <img
               src={hero.avatar}
               alt="Aurélie Foin"
               className="size-full object-cover object-top"
               loading="eager"
-              width={120}
-              height={120}
+              width={224}
+              height={224}
             />
           </motion.div>
 

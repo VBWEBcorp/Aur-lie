@@ -12,19 +12,13 @@ const formats = [
   {
     n: '01',
     title: 'Coaching individuel',
-    line: '6 mois pour identifier ce qui te retient et aller chercher le niveau d’après.',
+    line: '6 mois pour identifier ce qui te retient, et aller chercher le niveau d’après.',
     href: '/coaching-individuel',
   },
   {
     n: '02',
-    title: 'Conférences',
-    line: 'Une intervention pour des dirigeants, autour de l’équilibre et du leadership.',
-    href: '/conferences',
-  },
-  {
-    n: '03',
-    title: 'Cercles de dirigeants',
-    line: 'Le déclic, en groupe de pairs.',
+    title: 'Cercle de dirigeants',
+    line: 'Le déclic en groupe de pairs, dans un cadre qui sécurise la parole.',
     href: '/cercles-de-dirigeants',
   },
 ]
@@ -51,13 +45,13 @@ export function CoachingContent() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-display text-xs font-semibold tracking-[0.22em] uppercase text-white/70">
-              Coaching
+              Coaching de dirigeant
             </p>
             <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Trois manières de travailler ensemble
+              Deux manières de travailler ensemble
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-relaxed text-white/70 sm:text-xl">
-              Choisis le format qui te ressemble. Le déclic peut venir d&apos;un face-à-face, d&apos;une scène, ou d&apos;un cercle.
+              En face-à-face, ou en cercle. Le déclic peut venir des deux.
             </p>
           </motion.div>
         </div>

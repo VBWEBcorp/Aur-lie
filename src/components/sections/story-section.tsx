@@ -10,12 +10,12 @@ import { useContent } from '@/hooks/use-content'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Ma démarche',
-  title: "Ton antidoute dans l'incertitude",
+  eyebrow: 'À propos',
+  title: "J'ai dirigé sous pression avant d'accompagner ceux qui le font.",
   paragraph1:
-    "On est parfois surpris à quel point de minuscules changements peuvent avoir un impact énorme sur nos vies. Le coaching est un outil puissant et percutant. J'aide mes clients à faire ces changements subtils qui changent tout.",
+    "Je viens du monde de l'IT, où j'ai été ingénieure puis manager d'équipes pendant 8 ans. J'ai vécu de l'intérieur ce que c'est que de diriger sous pression, de douter sans pouvoir le montrer, de performer en se perdant un peu en chemin.",
   paragraph2:
-    "Plus on monte haut, plus il devient difficile de trouver des personnes qui nous parlent franchement, avec qui être dans la « vérité ». Je suis cette personne qui te dit ce que tu as le plus besoin d'entendre.",
+    "Je travaille avec les sous-personnalités de chaque dirigeant : l'Ambitieux, le Bienveillant, l'Anxieux, le Visionnaire. Mon rôle, c'est de les faire travailler ensemble pour que les décisions deviennent plus claires et plus alignées avec qui tu es vraiment.",
   image: 'https://i.ibb.co/6JP99MCG/Aur-lie-2.jpg',
 }
 
@@ -57,7 +57,7 @@ export function StorySection() {
             <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
               {story.eyebrow}
             </p>
-            <h2 className="font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
+            <h2 className="font-display text-balance text-4xl leading-[1.08] tracking-[-0.02em] text-foreground sm:text-5xl lg:text-6xl">
               {story.title}
             </h2>
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -68,7 +68,7 @@ export function StorySection() {
             </p>
             <Button variant="outline" className="group" asChild>
               <Link href="/a-propos">
-                En savoir plus
+                Mon parcours
                 <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </Link>
             </Button>

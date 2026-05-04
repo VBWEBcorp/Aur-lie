@@ -10,60 +10,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    {
-      url: `${baseUrl}/coaching`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/coaching-individuel`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/conferences`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/cercles-de-dirigeants`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/methode`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/a-propos`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/journal`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/temoignages`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.75,
-    },
+    { url: `${baseUrl}/coaching`, lastModified: now, changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${baseUrl}/coaching-individuel`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${baseUrl}/cercles-de-dirigeants`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/conferences`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/formations`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/podcast`, lastModified: now, changeFrequency: 'weekly', priority: 0.75 },
+    { url: `${baseUrl}/a-propos`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/journal`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/temoignages`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/guide-offert`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
   ]
 
   for (const post of getPublishedPosts()) {

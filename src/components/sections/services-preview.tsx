@@ -1,72 +1,73 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Compass, Flame, Sparkles, Target } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-
-import { SectionTitle } from '@/components/ui/section-title'
-import { Button } from '@/components/ui/button'
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { useContent } from '@/hooks/use-content'
-
-const defaultServices = [
-  { title: 'Talentueux·se, ambitieux·se', desc: "Tu excelles dans ton domaine et tu veux aller plus loin. J'adore cet état d'esprit." },
-  { title: "Dans l'action", desc: "Tu adores être dans l'action. Tu préfères décider et avancer." },
-  { title: 'Habitué·e à réussir', desc: "Tu as l'habitude de réussir ce que tu entreprends." },
-  { title: 'Exigeant·e sur la qualité', desc: "Tu veux offrir un haut niveau de qualité à tes clients." },
-]
-
-const defaultIcons = [Sparkles, Flame, Target, Compass]
 
 const ease = [0.22, 1, 0.36, 1] as const
 
+const services = [
+  {
+    n: '01',
+    title: 'Coaching individuel',
+    line: '6 mois, en face-à-face. Pour identifier ce qui te retient et aller chercher le niveau d’après.',
+    href: '/coaching-individuel',
+  },
+  {
+    n: '02',
+    title: 'Cercle de dirigeants',
+    line: 'Le déclic en groupe de pairs, dans un cadre qui sécurise la parole.',
+    href: '/cercles-de-dirigeants',
+  },
+  {
+    n: '03',
+    title: 'Conférences',
+    line: 'Leadership, prise de décision, connaissance de soi : pour des dirigeants et leurs équipes.',
+    href: '/conferences',
+  },
+  {
+    n: '04',
+    title: 'Formations',
+    line: 'Accompagnement au changement, gestion du stress, communication, leadership.',
+    href: '/formations',
+  },
+]
+
 export function ServicesPreview() {
-  const { data } = useContent('services', {
-    hero: { eyebrow: 'Pour toi' },
-    services: defaultServices,
-  })
-
-  const services = (data.services ?? defaultServices).slice(0, 4)
-
   return (
     <section className="border-b border-border/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <SectionTitle
-          eyebrow="Pour toi"
-          title="Si tu te reconnais, on va s'entendre"
-          description="Les points communs entre mes clients ? Les voici."
-        />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
-          {services.map((s: any, i: number) => {
-            const Icon = defaultIcons[i] ?? Sparkles
-            return (
-              <motion.div
-                key={s.title || i}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 0.45, ease, delay: i * 0.04 }}
-              >
-                <Card className="h-full rounded-2xl border-border/80 bg-card/70 shadow-[var(--shadow-sm)] ring-1 ring-foreground/5 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-md)]">
-                  <CardHeader>
-                    <span className="flex size-11 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15">
-                      <Icon className="size-5" aria-hidden />
-                    </span>
-                    <CardTitle className="font-display text-base">{s.title}</CardTitle>
-                    <CardDescription className="text-sm leading-relaxed">{s.desc || s.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            )
-          })}
-        </div>
-        <div className="mt-10 text-center">
-          <Button variant="outline" className="group" asChild>
-            <Link href="/coaching">
-              Découvrir le coaching
-              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
+        <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+          Comment je travaille
+        </p>
+        <h2 className="mt-6 max-w-3xl font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+          Quatre façons d&apos;aller chercher le niveau d&apos;après.
+        </h2>
+
+        <div className="mt-14 divide-y divide-border/50">
+          {services.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.55, ease, delay: i * 0.06 }}
+              className="group py-7 lg:py-10"
+            >
+              <Link href={s.href} className="flex items-baseline gap-6 md:gap-12">
+                <span className="font-display text-sm font-medium tabular-nums text-muted-foreground/70">
+                  {s.n}
+                </span>
+                <div className="flex flex-1 flex-wrap items-baseline gap-x-8 gap-y-2">
+                  <h3 className="font-display text-3xl leading-[1.05] tracking-[-0.02em] text-foreground transition-colors group-hover:text-primary sm:text-4xl lg:text-5xl">
+                    {s.title}
+                  </h3>
+                  <p className="text-base text-muted-foreground sm:text-lg">{s.line}</p>
+                </div>
+                <ArrowRight className="size-5 shrink-0 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-primary" />
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

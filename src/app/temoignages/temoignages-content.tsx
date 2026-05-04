@@ -6,6 +6,13 @@ import { CtaSection } from '@/components/sections/cta-section'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
+const references = [
+  'Norauto',
+  'Nordnet',
+  'Communauté de Communes Pévèle Carembault',
+  'Little Big Women',
+]
+
 export function TemoignagesContent() {
   return (
     <>
@@ -31,14 +38,39 @@ export function TemoignagesContent() {
               Témoignages
             </p>
             <h1 className="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Ce qu&apos;ils en disent
+              Ils m&apos;ont fait confiance
             </h1>
           </motion.div>
         </div>
       </section>
 
       <section className="border-b border-border/60">
-        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+          <p className="font-display text-xs font-semibold tracking-[0.22em] text-primary uppercase">
+            Quelques références
+          </p>
+          <div className="mt-10 flex flex-wrap items-baseline gap-x-4 gap-y-4 font-display text-3xl leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            {references.map((r, i) => (
+              <motion.span
+                key={r}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.5, ease, delay: i * 0.06 }}
+                className="inline-flex items-baseline gap-4"
+              >
+                <span>{r}</span>
+                {i < references.length - 1 ? (
+                  <span aria-hidden className="text-primary/60">·</span>
+                ) : null}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,10 +82,10 @@ export function TemoignagesContent() {
               Bientôt
             </p>
             <h2 className="mt-6 font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl">
-              Cette page se construit au fil des retours.
+              Les retours dirigeants arrivent.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground sm:text-xl">
-              Les premiers témoignages arrivent. En attendant, le mieux pour se faire une idée, c&apos;est encore de venir en parler 15 minutes.
+              Cette section se construit au fil des accompagnements. En attendant, le mieux pour se faire une idée, c&apos;est encore de venir en parler 15 minutes.
             </p>
           </motion.div>
         </div>

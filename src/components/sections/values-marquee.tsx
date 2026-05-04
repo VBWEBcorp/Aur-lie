@@ -1,24 +1,18 @@
 import {
-  Compass,
-  Feather,
-  Flower2,
+  Eye,
+  Flame,
   Heart,
-  Infinity as InfinityIcon,
-  Leaf,
-  Sun,
+  Sparkles,
   Wind,
   type LucideIcon,
 } from 'lucide-react'
 
 const values: { icon: LucideIcon; label: string }[] = [
-  { icon: Sun, label: 'Clarté' },
-  { icon: Wind, label: 'Liberté' },
-  { icon: Heart, label: 'Présence' },
-  { icon: Feather, label: "Sans t'épuiser" },
-  { icon: Leaf, label: 'Ni tout changer' },
-  { icon: Compass, label: 'Your rules, your game' },
-  { icon: InfinityIcon, label: '+ de 2000h de coaching' },
-  { icon: Flower2, label: "L'antidoute" },
+  { icon: Sparkles, label: 'Authenticité' },
+  { icon: Eye, label: 'Lucidité' },
+  { icon: Heart, label: 'Bienveillance sans complaisance' },
+  { icon: Flame, label: 'Humour' },
+  { icon: Wind, label: 'Profondeur' },
 ]
 
 function ValuesTrack({

@@ -46,7 +46,7 @@ export function CerclesContent() {
             Le format
           </p>
           <h2 className="mt-6 max-w-3xl font-display text-balance text-3xl leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
-            Un cercle restreint de dirigeants, animé sur la durée.
+            Un cercle restreint, animé sur la durée.
           </h2>
           <div className="mt-10 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
             <p>

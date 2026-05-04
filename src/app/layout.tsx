@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import { RootWrapper } from '@/components/layout/root-wrapper'
-import { ThemeScript } from '@/components/theme/theme-script'
 import { siteConfig } from '@/lib/seo'
 
 import '../index.css'
@@ -73,11 +72,7 @@ export default function RootLayout({
       lang="fr"
       dir="ltr"
       className={`${inter.variable} ${jakarta.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        <ThemeScript />
-      </head>
       <body className="flex min-h-dvh flex-col">
         <RootWrapper>{children}</RootWrapper>
       </body>
